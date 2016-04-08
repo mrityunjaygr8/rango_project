@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import include, url,patterns
 from django.contrib import admin
 from rango import views
+from django.conf import settings
 
 urlpatterns = patterns('',
     # Examples:
@@ -25,3 +26,11 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^rango/', include('rango.urls')), # ADD THIS NEW TUPLE!
 )
+
+if settings.DEBUG:
+    urlpatterns+=patterns(
+            'django.views.static',
+            (r'^media/(?P<path>.*)',
+                'serve',
+                {'document_root':settings.MEDIA_ROOT}),
+        )
