@@ -3,6 +3,7 @@
 
 {% block title %}Add Page{% endblock %}
 {% block body_block %}
+    <div class="page-header">
         <h1>Add a Page</h1>
 
         <form id="page_form" method="post" action="/rango/category/{{ category.name }}/add_page/">
@@ -26,4 +27,5 @@
             {% endif %}
 
         </form>
+    </div>
 {% endblock %}
