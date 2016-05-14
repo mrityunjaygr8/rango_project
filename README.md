@@ -1,0 +1,3 @@
+# rango_project
+learning django using the book Tango with dJango.....
+Source::http://www.tangowithdjango.com/
